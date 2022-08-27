@@ -1,4 +1,6 @@
-
+#Creo funciones para hacer mas legible y menos repetitivo el codigo
+def imc_message(name, age, IMC, result):
+    print('Hola' , name , 'Tienes' , age , 'años', 'Tu IMC es ' , IMC , result )
 
 #Menu que vera el usuario
 menu = """
@@ -39,23 +41,17 @@ while not leave:
         IMC = round(weight_kg /(height_mtrs**2) , 2)
         #Clasificacion del IMC del usuario
         if IMC <= 18.5:
-            print('Hola' , user_name , 'Tienes' , user_age , 'años', 'Tu IMC es ' , IMC , 
-            'Actualmente estas por debajo de tu peso idead' )
+            imc_message(user_name, user_age, IMC, "Actualmente te encuentras por debajo de tu peso ideal")
         if IMC >= 18.5 and IMC <= 24.9:
-            print('Hola' , user_name , 'Tienes' , user_age , 'años' , 'Tu IMC es ' , IMC , 
-            'Actualmente estas en tu peso ideal ' )
+            imc_message(user_name, user_age, IMC, " Actualmente estas en tu peso ideal " )
         if IMC >= 25 and IMC <= 29.9:
-            print('Hola' , user_name , 'Tienes' , user_age , 'años' , 'Tu IMC es ' , IMC , 
-            'Actualmente estas en sobrepeso ' )
+            imc_message(user_name, user_age, IMC,'Actualmente estas en sobrepeso' )
         if IMC >= 30 and IMC <= 34.9:
-            print('Hola' , user_name , 'Tienes' , user_age , 'años' , 'Tu IMC es ' , IMC , 
-            'Actualmente estas en obesidad tipo I ' )
+            imc_message(user_name, user_age, IMC, 'Actualmente estas en obesidad tipo I ' )
         if IMC >= 35 and IMC <= 39.9:
-            print('Hola' , user_name , 'Tienes' , user_age , 'años' , 'Tu IMC es ' , IMC , 
-            'Actualmente estas en obesidad tipo II ' )
+            imc_message(user_name, user_age, IMC,'Actualmente estas en obesidad tipo II ' )
         if IMC >= 40:
-            print('Hola' , user_name , 'Tienes' , user_age , 'años' , 'Tu IMC es ' , IMC , 
-            'Actualmente estas en obesidad tipo III ' )
+            imc_message(user_name, user_age, IMC,'Actualmente estas en obesidad tipo III ' )
         # Variables y funciones para el menu secundario
         print(second_menu)
         option = input('Elige una opcion: ')
