@@ -1,15 +1,37 @@
 #Creo funciones para hacer mas legible y menos repetitivo el codigo
 def imc_message(name, age, IMC, result):
     print('Hola' , name , 'Tienes' , age , 'años', 'Tu IMC es ' , IMC , result )
-
+def weight_messages(IMC):
+    if IMC <= 18.5:
+        message = """
+        1.-Come con más frecuencia.
+        2.-Prueba licuados y batidos de fruta.
+        3.-Agrega aderezos a tus comidas sin exederte.
+        5.-Hacer ejercicio.
+        4.-Para una mejor guia acude a tu medico. 
+        """
+    if IMC >= 18.5 and IMC <= 24.9:
+        message = """
+        1.-Mantener una dieta saludable.
+        2.-Haz Ejercicio regular.
+        3.-Merienda saludable.
+        4.-Beba mucho líquido.
+        5.-Para una mejor guia acude a tu medico.
+        """
+    if IMC >= 24.9:
+        message ="""
+        1.-Empieza una dieta.
+        2.-Haz ejercicio con frecuencia.
+        3.-Ve evitando las comiadas altas en calorias.
+        4.-Acude inmediatamente a tu medico para una mejor orientacion.
+        """
+    return print(message)
 #Menu que vera el usuario
 menu = """
 1.- Calcular
 2.-Salir
 """
 option = ""
-message = ""
-
 second_menu = """
 1.-- Recomendaciones segun mi peso
 2.-- Regresar al menu principal
@@ -56,50 +78,7 @@ while not leave:
         print(second_menu)
         option = input('Elige una opcion: ')
         if option == '1':
-            if IMC <= 18.5:
-                message = """
-                1.-Come con más frecuencia.
-                2.-Prueba licuados y batidos de fruta.
-                3.-Agrega aderezos a tus comidas sin exederte.
-                5.-Hacer ejercicio.
-                4.-Para una mejor guia acude a tu medico. 
-                """
-            if IMC >= 18.5 and IMC <= 24.9:
-                message = """
-                1.-Mantener una dieta saludable.
-                2.-Haz Ejercicio regular.
-                3.-Merienda saludable.
-                4.-Beba mucho líquido.
-                5.-Para una mejor guia acude a tu medico.
-                """
-            if IMC >= 25 and IMC <= 29.9:
-                message ="""
-                1.-Empieza una dieta.
-                2.-Haz ejercicio con frecuencia.
-                3.-Ve evitando las comiadas altas en calorias.
-                4.-Acude inmediatamente a tu medico para una mejor orientacion.
-                """
-            if IMC >= 30 and IMC <= 34.9:
-                message ="""
-                1.-Empieza una dieta saludable.
-                2.-Haz ejercicio con frecuencia.
-                3.-Acude inmediatamente a tu medico para una mejor orientacion.
-                """
-            if IMC >= 35 and IMC <= 39.9:
-                message = """
-                1.-Empieza a cuidar tu alimentacion.
-                2.-Evita las comidas altas en calorias.
-                3.-Empieza una rutina de ejercicios.
-                4.-Acude inmediatamente a tu medico para una mejor orientacion.
-                """
-            if IMC >= 40:
-                message = """
-                1.-Empieza a cuidar tu alimentacion.
-                2.-Evita las comidas altas en calorias.
-                3.-Empieza una rutina de ejercicios.
-                4.-Acude inmediatamente a tu medico para una mejor orientacion.
-                """
-            print(message)
+            weight_messages(IMC)
         elif option == '2':
             pass        
     elif selection == '2':
